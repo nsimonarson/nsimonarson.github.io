@@ -34,7 +34,7 @@ const InstagramCamera = (props: React.SVGProps<SVGSVGElement>) => (
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <circle cx="12" cy="12" r="7" />
+    <circle cx="12" cy="12" r="6" />
     <circle cx="20" cy="4" r="1.5" fill="currentColor" stroke="none" />
   </svg>
 );
@@ -52,25 +52,26 @@ function Header() {
 
   return (
     <header className="fixed left-0 right-0 bg-white z-50">
-      <div className="w-full px-8 lg:px-16 py-8 md:py-12">
-        <div className="flex flex-col md:flex-row items-center justify-between w-full gap-6 md:gap-0">
+      <div className="w-full px-6 md:px-12 lg:px-32 xl:px-60 py-6 md:py-12">
+        <div className="flex flex-row items-center justify-center md:justify-between w-full">
 
-          {/* 1. Navigation (Left) */}
-          <nav className="flex-1 flex justify-center md:justify-start gap-12">
+          {/* 1. Navigation (Left) - Hidden on mobile */}
+          <nav className="hidden md:flex flex-1 justify-start gap-12">
             <a href="#work" onClick={(e) => scrollToSection(e, 'work')} className={linkStyle} style={{ color: BRAND_COLOR }}>Work</a>
             <a href="mailto:info@studiofreunde.de" className={linkStyle} style={{ color: BRAND_COLOR }}>Contact</a>
           </nav>
 
-          {/* 2. Logo (Center) */}
-          <div className="flex-1 text-center">
+          {/* 2. Logo (Center) - Always visible */}
+          <div className="text-center">
             <h1 className="text-3xl font-bold mb-1" style={{ color: BRAND_COLOR, letterSpacing: '1.5pt', fontFamily: 'agenda, sans-serif' }}>
               studiofreunde
             </h1>
-            <p className="text-xs tracking-wide" style={{ color: BRAND_COLOR }}>Minimale Eingriffe. Langlebige Räume.</p>
+            {/* Tagline hidden on mobile to keep it super clean? Or keep it? keeping it for now, can remove `hidden` if desired */}
+            <p className="text-xs tracking-wide block" style={{ color: BRAND_COLOR }}>Minimale Eingriffe. Langlebige Räume.</p>
           </div>
 
-          {/* 3. Social Icons (Right) */}
-          <div className="flex-1 flex justify-center md:justify-end gap-4">
+          {/* 3. Social Icons (Right) - Hidden on mobile */}
+          <div className="hidden md:flex flex-1 justify-end gap-4">
             <a
               href="https://www.linkedin.com/in/natalia-simonarson/"
               className="flex items-center justify-center w-6 h-6 rounded-sm border-2 transition-all hover:bg-opacity-10 hover:bg-blue-50"
@@ -93,6 +94,8 @@ function Header() {
 }
 
 function Footer() {
+  const iconButtonStyle = { borderColor: BRAND_COLOR, color: BRAND_COLOR };
+  
   return (
     <footer className="py-10">
       <div className="text-center flex flex-col items-center">
@@ -103,10 +106,29 @@ function Footer() {
         >
           info@studiofreunde.de
         </a>
-        <p className="text-[12px]" style={{ color: BRAND_COLOR }}>
+        <p className="text-[12px] mt-2" style={{ color: BRAND_COLOR }}>
           Eduard-Schmid-Str. 30, 81541 München
         </p>
-        <p className="text-[10px] tracking-wide italic" style={{ color: BRAND_COLOR }}>
+        
+        {/* ADDED: Social Icons to Footer (visible on mobile since header icons are hidden) */}
+        <div className="flex justify-center gap-4 mt-6 mb-4 md:hidden">
+            <a
+              href="https://www.linkedin.com/in/natalia-simonarson/"
+              className="flex items-center justify-center w-8 h-8 rounded-lg border-2 transition-all hover:bg-opacity-10 hover:bg-blue-50"
+              style={iconButtonStyle}
+            >
+              <LinkedInFilled className="w-4 h-4" />
+            </a>
+            <a
+              href="https://www.instagram.com/studio.freunde"
+              className="flex items-center justify-center w-8 h-8 rounded-lg border-2 transition-all hover:bg-opacity-10 hover:bg-blue-50"
+              style={iconButtonStyle}
+            >
+              <InstagramCamera className="w-6 h-6" />
+            </a>
+        </div>
+
+        <p className="text-[10px] tracking-wide italic mt-1" style={{ color: BRAND_COLOR }}>
           © {new Date().getFullYear()} studiofreunde. Alle Rechte vorbehalten.
         </p>
       </div>
@@ -122,12 +144,13 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white px-60 ">
+    <div className="min-h-screen bg-white px-6 md:px-12 lg:px-32 xl:px-60">
       <Header />
 
       {/* --- HERO SECTION --- */}
-      <section className="pt-36 pb-20">
-        <div className="w-full px-4 md:px-12 lg:px-24">
+      {/* Adjusted top padding since header is shorter on mobile now */}
+      <section className="pt-32 md:pt-36 pb-12 md:pb-20">
+        <div className="w-full">
           <div className="max-w-4xl mx-auto">
             <div className="aspect-[3/2] overflow-hidden bg-gray-100">
               <img
@@ -136,7 +159,7 @@ export default function App() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="flex justify-between mt-3 px-1">
+            <div className="flex flex-col md:flex-row justify-between mt-3 px-1 gap-2 md:gap-0">
               <span 
                 className="text-lg tracking-widest text-sm" 
                 style={{ color: BRAND_COLOR }}
@@ -147,7 +170,7 @@ export default function App() {
                 (von links nach rechts)
               </span>
             </div>
-            <div className="flex justify-center mt-12">
+            <div className="flex justify-center mt-8 md:mt-12">
               <button 
                 onClick={scrollToWork} 
                 className="cursor-pointer hover:opacity-70 transition-opacity animate-bounce"
@@ -160,25 +183,25 @@ export default function App() {
       </section>
 
       {/* --- WORK SECTION --- */}
-      <section id="work" className="scroll-mt-32 md:scroll-mt-48 w-full px-4 md:px-12 max-w-[1920px] mx-auto">
+      <section id="work" className="scroll-mt-32 md:scroll-mt-48 w-full max-w-[1920px] mx-auto">
 
         {/* Project Header */}
-        <div className="mb-16 w-full text-center md:text-left">
+        <div className="mb-12 md:mb-16 w-full text-center md:text-left">
           <h2 className="text-2xl tracking-tight font-medium">
             <span className="uppercase" style={{ color: BRAND_COLOR }}>
               MAIGN
             </span>
-            <span className="uppercase ml-2 text-gray-400">
+            <span className="uppercase ml-2 text-gray-400 block md:inline">
               Work in Progress
             </span>
           </h2>
-          <p className="text-md uppercase tracking-wide mb-1" style={{ color: BRAND_COLOR }}>
-            Umbau eines denkmalgeschützten waldlerhauses in ein zweifamilien-wohnhaus
+          <p className="text-md uppercase tracking-wide mb-1 mt-2 md:mt-0" style={{ color: BRAND_COLOR }}>
+            Umbau eines denkmalgeschützten waldlerhauses
           </p>
         </div>
 
         {/* Main Architectural Drawing */}
-        <div className="mb-24 w-full bg-white">
+        <div className="mb-12 md:mb-24 w-full bg-white">
           <img
             src={elevationImg}
             alt="Elevation"
@@ -187,43 +210,40 @@ export default function App() {
         </div>
 
         {/* Text Block 1 */}
-        <div className="mb-20 max-w-3xl mx-auto text-justify md:text-left">
+        <div className="mb-12 md:mb-20 max-w-3xl mx-auto text-justify md:text-left">
           <p className="text-sm leading-loose tracking-wide text-justify" style={{ color: BRAND_COLOR }}>
             Am Waldrand steht ein Waldlerhaus aus dem 18. Jahrhundert – ein leiser, kraftvoller Bau, dessen Alltag einst Wohnen und Arbeiten selbstverständlich unter einem Dach bündelte. Der denkmalgeschützte Vorderbau beherbergte Schlafkammern, Esszimmer und Dachboden; die Küche war zweigeteilt: zur Stallseite hin der Schlachtbereich, näher am Esszimmer die Kochstelle. Diese räumliche Logik erzählt von Nähe, von Wegen, von Gerüchen und Temperaturen – und davon, wie präzise sich Architektur früher an Nutzung und Material verankerte.
           </p>
         </div>
 
-        {/* Minimalist Divider Line */}
-        <div className="max-w-3xl mx-auto mb-20 h-px opacity-10" style={{ backgroundColor: BRAND_COLOR }}></div>
-
         {/* --- ROW OF 3 IMAGES --- */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-24 w-full md:h-64">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12 md:mb-24 w-full md:h-64">
           <img 
             src={sectionImg} 
             alt="Section" 
-            className="h-full w-auto object-contain" 
+            className="w-full h-auto md:w-auto md:h-full object-contain" 
           />
           <img 
             src={barnImg} 
             alt="Barn Structure" 
-            className="h-full w-auto object-contain" 
+            className="w-full h-auto md:w-auto md:h-full object-contain" 
           />
           <img 
             src={interiorImg} 
             alt="Interior View" 
-            className="h-full w-auto object-contain" 
+            className="w-full h-auto md:w-auto md:h-full object-contain" 
           />
         </div>
 
         {/* Text Block 2 */}
-        <div className="mb-24 max-w-3xl mx-auto text-justify md:text-left">
+        <div className="mb-12 md:mb-24 max-w-3xl mx-auto text-justify md:text-left">
           <p className="text-sm tracking-wide mb-4 text-justify leading-loose" style={{ color: BRAND_COLOR }}>
             Heute wird der Vorderbau behutsam saniert und zu einem zeitgemäßen Zweifamilienhaus weiterentwickelt. Unsere Haltung: nicht „überformen“, sondern lesen, verstehen und fortschreiben. Die Sanierung nimmt die vernakuläre Bauweise ernst – sie stammt aus einer Zeit, in der Materialkenntnis und natürliche Baustoffe nicht optional, sondern notwendig waren. In den Schichten des Bestands liegt ein Bauwissen, das im Entwurfsprozess wieder erfahrbar wird: Holz, das atmet; Lehm, der Feuchtigkeit puffert; Schilfrohr als Putzträger. Im Innenraum zeigt sich dieses Prinzip an der historischen Haftungsebene: kleine Holzstücke (Staken), benagelt als Träger für Lehm, der das Holz vor Durchfeuchtung schützt und zugleich einen geeigneten Untergrund für den Putzaufbau schafft – eine robuste, kapillaraktive Alternative zu heutigen Verbundkonstruktionen.
           </p>
         </div>
 
         {/* --- BOTTOM TECHNICAL GRID --- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mb-12 md:mb-24">
 
           {/* Left Quadrant */}
           <div className="w-full h-auto md:relative flex items-center justify-center">
@@ -251,12 +271,10 @@ export default function App() {
               />
             </div>
           </div>
-
-
         </div>
 
         {/* Text Block 3 */}
-        <div className="mb-24 max-w-3xl mx-auto text-justify md:text-left">
+        <div className="mb-12 md:mb-24 max-w-3xl mx-auto text-justify md:text-left">
           <p className="text-sm tracking-wide mb-6 text-justify leading-loose" style={{ color: BRAND_COLOR }}>
             Tragfähige Bausubstanz wird durch rekonstruktive Maßnahmen gesichert und repariert. Sensible Eingriffe schaffen neue räumliche Qualitäten – mehr Licht, bessere Erschließung, zeitgemäße Wohnlichkeit – ohne den Charakter des Hauses zu verlieren. Das Neue ist nicht lauter als das Alte, sondern im Einklang.
           </p>
