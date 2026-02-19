@@ -95,12 +95,12 @@ function Header() {
 
 function Footer() {
   const iconButtonStyle = { borderColor: BRAND_COLOR, color: BRAND_COLOR };
-  
+
   return (
     <footer className="py-10">
       <div className="text-center flex flex-col items-center">
-        <a 
-          href="mailto:info@studiofreunde.de" 
+        <a
+          href="mailto:info@studiofreunde.de"
           className="text-lg border-b border-transparent hover:border-current transition-all"
           style={{ color: BRAND_COLOR }}
         >
@@ -109,7 +109,7 @@ function Footer() {
         <p className="text-[12px] mt-2" style={{ color: BRAND_COLOR }}>
           Eduard-Schmid-Str. 30, 81541 München
         </p>
-        
+
         {/* ADDED: Social Icons to Footer (visible on mobile since header icons are hidden) */}
         <div className="flex justify-center gap-4 mt-6 mb-4 md:hidden">
             <a
@@ -130,6 +130,9 @@ function Footer() {
 
         <p className="text-[10px] tracking-wide italic mt-1" style={{ color: BRAND_COLOR }}>
           © {new Date().getFullYear()} studiofreunde. Alle Rechte vorbehalten.
+        </p>
+        <p className="text-[10px] tracking-wide italic mt-1" style={{ color: BRAND_COLOR }}>
+            Fotos © {new Date().getFullYear()} <a href="https://www.instagram.com/agidomany?igsh=NXlvaWVma3VuYmYw" target="_blank">Ágnes Domány</a>. Alle Rechte vorbehalten.
         </p>
       </div>
     </footer>
@@ -160,8 +163,8 @@ export default function App() {
               />
             </div>
             <div className="flex flex-col md:flex-row justify-between mt-3 px-1 gap-2 md:gap-0">
-              <span 
-                className="text-lg tracking-widest text-sm" 
+              <span
+                className="text-lg tracking-widest text-sm"
                 style={{ color: BRAND_COLOR }}
               >
                 Meret, Natalia, Dora
@@ -171,8 +174,8 @@ export default function App() {
               </span>
             </div>
             <div className="flex justify-center mt-8 md:mt-12">
-              <button 
-                onClick={scrollToWork} 
+              <button
+                onClick={scrollToWork}
                 className="cursor-pointer hover:opacity-70 transition-opacity animate-bounce"
               >
                 <ChevronDown className="w-8 h-8" style={{ color: BRAND_COLOR }} />
@@ -218,20 +221,20 @@ export default function App() {
 
         {/* --- ROW OF 3 IMAGES --- */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12 md:mb-24 w-full md:h-64">
-          <img 
-            src={sectionImg} 
-            alt="Section" 
-            className="w-full h-auto md:w-auto md:h-full object-contain" 
+          <img
+            src={sectionImg}
+            alt="Section"
+            className="w-full h-auto md:w-auto md:h-full object-contain"
           />
-          <img 
-            src={barnImg} 
-            alt="Barn Structure" 
-            className="w-full h-auto md:w-auto md:h-full object-contain" 
+          <img
+            src={barnImg}
+            alt="Barn Structure"
+            className="w-full h-auto md:w-auto md:h-full object-contain"
           />
-          <img 
-            src={interiorImg} 
-            alt="Interior View" 
-            className="w-full h-auto md:w-auto md:h-full object-contain" 
+          <img
+            src={interiorImg}
+            alt="Interior View"
+            className="w-full h-auto md:w-auto md:h-full object-contain"
           />
         </div>
 
