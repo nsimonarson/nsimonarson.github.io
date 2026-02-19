@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ChevronDown } from "lucide-react";
+import { ImpressumModal } from './ImpressumModal';
 
 // --- Asset Imports ---
 // Adjust the '../assets/' path if your App.tsx is in a different folder depth
@@ -93,7 +94,7 @@ function Header() {
   );
 }
 
-function Footer() {
+function Footer({ onImpressumClick }: { onImpressumClick: () => void }) {
   const iconButtonStyle = { borderColor: BRAND_COLOR, color: BRAND_COLOR };
 
   return (
@@ -134,6 +135,13 @@ function Footer() {
         <p className="text-[10px] tracking-wide italic mt-1" style={{ color: BRAND_COLOR }}>
             Fotos © {new Date().getFullYear()} <a href="https://www.instagram.com/agidomany?igsh=NXlvaWVma3VuYmYw" target="_blank">Ágnes Domány</a>. Alle Rechte vorbehalten.
         </p>
+        <button
+          onClick={onImpressumClick}
+          className="text-[10px] tracking-wide italic mt-1 cursor-pointer hover:underline transition-all"
+          style={{ color: BRAND_COLOR }}
+        >
+          Impressum
+        </button>
       </div>
     </footer>
   );
@@ -142,6 +150,8 @@ function Footer() {
 // --- Main App Component ---
 
 export default function App() {
+  const [isImpressumOpen, setIsImpressumOpen] = useState(false);
+
   const scrollToWork = () => {
     document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -288,7 +298,12 @@ export default function App() {
         </div>
       </section>
 
-      <Footer />
+      <Footer onImpressumClick={() => setIsImpressumOpen(true)} />
+
+      <ImpressumModal
+        open={isImpressumOpen}
+        onOpenChange={setIsImpressumOpen}
+      />
     </div>
   );
 }
