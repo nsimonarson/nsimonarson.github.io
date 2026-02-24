@@ -3,7 +3,8 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://nsimonarson.github.io',
+  // site: 'https://nsimonarson.github.io',
+  site: 'https://www.studiofreunde.de',
   integrations: [tailwind()],
   image: {
     service: { entrypoint: 'astro/assets/services/noop' },

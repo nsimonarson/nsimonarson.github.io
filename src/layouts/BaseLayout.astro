@@ -15,8 +15,18 @@ const { title, lang } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/png" href="/icon.png" />
-		<link rel="stylesheet" href="https://use.typekit.net/qub7tse.css" />
+		<link rel="preconnect" href="https://use.typekit.net" crossorigin />
+		<link rel="stylesheet" href="https://use.typekit.net/qub7tse.css" media="print" onload="this.media='all'" />
+		<noscript><link rel="stylesheet" href="https://use.typekit.net/qub7tse.css" /></noscript>
 		<title>{title}</title>
+		<style is:inline>
+			/* Inline critical styles to prevent FOUC */
+			body {
+				margin: 0;
+				background-color: #ffffff;
+				font-family: ui-sans-serif, system-ui, sans-serif;
+			}
+		</style>
 	</head>
 	<body>
 		<slot />
