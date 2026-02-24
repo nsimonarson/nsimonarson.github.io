@@ -1,0 +1,203 @@
+---
+import { Image } from 'astro:assets';
+import barnImg from '../../assets/barn.jpg';
+import elevationImg from '../../assets/elevation.jpg';
+import exteriorImg from '../../assets/exterior.jpg';
+import floorPlanImg from '../../assets/floor_plan.jpg';
+import interiorImg from '../../assets/interior.jpg';
+import sectionImg from '../../assets/section.jpg';
+import sitePlanImg from '../../assets/site_plan.jpg';
+import usImg from '../../assets/us.jpg';
+import ChevronDown from '../../components/ChevronDown.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const BRAND_COLOR = '#00008b';
+---
+
+<BaseLayout title="studiofreunde" lang="en">
+	<div class="min-h-screen bg-white px-6 md:px-12 lg:px-32 xl:px-60">
+		<Header
+			tagline="Minimal Interventions. Enduring Spaces."
+			workLabel="Work"
+			contactLabel="Contact"
+		/>
+
+		<!-- HERO SECTION -->
+		<section class="pt-32 md:pt-36 pb-12 md:pb-20">
+			<div class="w-full">
+				<div class="max-w-4xl mx-auto">
+					<div class="aspect-[3/2] overflow-hidden bg-gray-100">
+						<Image
+							src={usImg}
+							alt="Studio Team"
+							width={1200}
+							height={800}
+							loading="eager"
+							class="w-full h-full object-cover"
+						/>
+					</div>
+					<div class="flex flex-col md:flex-row justify-between mt-3 px-1 gap-2 md:gap-0">
+						<span class="text-lg tracking-widest text-sm" style={`color: ${BRAND_COLOR}`}>
+							Meret, Natalia, Dora
+						</span>
+						<span class="text-sm tracking-widest text-gray-400">
+							(from left to right)
+						</span>
+					</div>
+					<div class="flex justify-center mt-8 md:mt-12">
+						<a
+							href="#work"
+							class="cursor-pointer hover:opacity-70 transition-opacity animate-bounce"
+						>
+							<ChevronDown class="w-8 h-8" style={`color: ${BRAND_COLOR}`} />
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- WORK SECTION -->
+		<section id="work" class="scroll-mt-32 md:scroll-mt-48 w-full max-w-[1920px] mx-auto">
+			<!-- Project Header -->
+			<div class="mb-12 md:mb-16 w-full text-center md:text-left">
+				<h2 class="text-2xl tracking-tight font-medium">
+					<span class="uppercase" style={`color: ${BRAND_COLOR}`}>MAIGN</span>
+					<span class="uppercase ml-2 text-gray-400 block md:inline">
+						Work in Progress
+					</span>
+				</h2>
+				<p class="text-md uppercase tracking-wide mb-1 mt-2 md:mt-0" style={`color: ${BRAND_COLOR}`}>
+					Renovation of a heritage-listed Bavarian farmhouse
+				</p>
+			</div>
+
+			<!-- Main Architectural Drawing -->
+			<div class="mb-12 md:mb-24 w-full bg-white">
+				<Image
+					src={elevationImg}
+					alt="Elevation"
+					width={1920}
+					height={1080}
+					class="w-full h-auto object-contain max-h-[80vh] mx-auto"
+				/>
+			</div>
+
+			<!-- Text Block 1 -->
+			<div class="mb-12 md:mb-20 max-w-3xl mx-auto text-justify md:text-left">
+				<p class="text-sm leading-loose tracking-wide text-justify" style={`color: ${BRAND_COLOR}`}>
+					At the edge of the forest stands an 18th-century Bavarian farmhouse – a quiet, powerful
+					structure whose everyday life once naturally combined living and working under one roof. The
+					heritage-listed front building housed bedrooms, dining room, and attic; the kitchen was
+					divided: towards the stable side the slaughtering area, closer to the dining room the
+					cooking area. This spatial logic tells of proximity, of pathways, of smells and temperatures
+					– and of how precisely architecture was once anchored to use and material.
+				</p>
+			</div>
+
+			<!-- ROW OF 3 IMAGES -->
+			<div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12 md:mb-24 w-full md:h-64">
+				<Image
+					src={sectionImg}
+					alt="Section"
+					width={600}
+					height={400}
+					class="w-full h-auto md:w-auto md:h-full object-contain"
+				/>
+				<Image
+					src={barnImg}
+					alt="Barn Structure"
+					width={600}
+					height={400}
+					class="w-full h-auto md:w-auto md:h-full object-contain"
+				/>
+				<Image
+					src={interiorImg}
+					alt="Interior View"
+					width={600}
+					height={400}
+					class="w-full h-auto md:w-auto md:h-full object-contain"
+				/>
+			</div>
+
+			<!-- Text Block 2 -->
+			<div class="mb-12 md:mb-24 max-w-3xl mx-auto text-justify md:text-left">
+				<p class="text-sm tracking-wide mb-4 text-justify leading-loose" style={`color: ${BRAND_COLOR}`}>
+					Today, the front building is being carefully renovated and developed into a contemporary
+					two-family house. Our approach: not to "transform", but to read, understand, and continue
+					writing. The renovation takes vernacular construction seriously – it originates from a time
+					when material knowledge and natural building materials were not optional, but necessary. In
+					the layers of the existing structure lies building knowledge that becomes tangible again in
+					the design process: wood that breathes; clay that buffers moisture; reed as plaster support.
+					In the interior, this principle is evident in the historical bonding layer: small wooden
+					pieces (stakes), nailed as supports for clay, which protects the wood from moisture
+					penetration while creating a suitable base for the plaster application – a robust,
+					capillary-active alternative to today's composite constructions.
+				</p>
+			</div>
+
+			<!-- BOTTOM TECHNICAL GRID -->
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mb-12 md:mb-24">
+				<!-- Left Quadrant -->
+				<div class="w-full h-auto md:relative flex items-center justify-center">
+					<Image
+						src={exteriorImg}
+						alt="Exterior View"
+						width={800}
+						height={600}
+						class="w-full h-auto md:absolute md:inset-0 md:w-full md:h-full md:object-contain"
+					/>
+				</div>
+
+				<!-- Right Quadrants (Stacked) -->
+				<div class="flex flex-col gap-4 w-full h-full">
+					<div class="w-full">
+						<Image
+							src={sitePlanImg}
+							alt="Site Plan"
+							width={800}
+							height={400}
+							class="w-full h-auto block"
+						/>
+					</div>
+					<div class="w-full">
+						<Image
+							src={floorPlanImg}
+							alt="Floor Plan"
+							width={800}
+							height={400}
+							class="w-full h-auto block"
+						/>
+					</div>
+				</div>
+			</div>
+
+			<!-- Text Block 3 -->
+			<div class="mb-12 md:mb-24 max-w-3xl mx-auto text-justify md:text-left">
+				<p class="text-sm tracking-wide mb-6 text-justify leading-loose" style={`color: ${BRAND_COLOR}`}>
+					Load-bearing building fabric is secured and repaired through reconstructive measures.
+					Sensitive interventions create new spatial qualities – more light, better access,
+					contemporary livability – without losing the character of the house. The new is not louder
+					than the old, but in harmony.
+				</p>
+
+				<p class="text-sm tracking-wide text-justify leading-loose" style={`color: ${BRAND_COLOR}`}>
+					During project development, it became clear: the fabric of the stable extension is no longer
+					structurally sound; the masonry crumbles at the slightest touch. This part will be
+					reconceived as a second construction phase: an extension that opens the massive log house
+					towards the overgrown greenery – with a light, permeable construction and direct relation to
+					the outdoor space. Thus, from the ensemble emerges an expanded living space: with the past
+					into the future – not as a backdrop, but as lived continuity.
+				</p>
+			</div>
+		</section>
+
+		<Footer
+			impressumLabel="Imprint"
+			impressumUrl="/en/impressum"
+			copyrightText="studiofreunde. All rights reserved."
+			photoCreditText="Photos"
+		/>
+	</div>
+</BaseLayout>

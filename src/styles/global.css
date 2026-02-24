@@ -1,0 +1,11 @@
+@import "./fonts.css";
+
+/* Smooth scrolling */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Brand color utility */
+.brand-color {
+	color: #00008b;
+}

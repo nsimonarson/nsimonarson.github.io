@@ -1,0 +1,66 @@
+---
+import InstagramIcon from './InstagramIcon.astro';
+import LinkedInIcon from './LinkedInIcon.astro';
+
+interface Props {
+	impressumLabel: string;
+	impressumUrl: string;
+	copyrightText: string;
+	photoCreditText: string;
+}
+
+const { impressumLabel, impressumUrl, copyrightText, photoCreditText } = Astro.props;
+const BRAND_COLOR = '#00008b';
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="py-10">
+	<div class="text-center flex flex-col items-center">
+		<a
+			href="mailto:info@studiofreunde.de"
+			class="text-lg border-b border-transparent hover:border-current transition-all"
+			style={`color: ${BRAND_COLOR}`}
+		>
+			info@studiofreunde.de
+		</a>
+		<p class="text-[12px] mt-2" style={`color: ${BRAND_COLOR}`}>
+			Eduard-Schmid-Str. 30, 81541 München
+		</p>
+
+		<!-- Social Icons (mobile only) -->
+		<div class="flex justify-center gap-4 mt-6 mb-4 md:hidden">
+			<a
+				href="https://www.linkedin.com/in/natalia-simonarson/"
+				class="flex items-center justify-center w-8 h-8 rounded-lg border-2 transition-all hover:bg-opacity-10 hover:bg-blue-50"
+				style={`border-color: ${BRAND_COLOR}; color: ${BRAND_COLOR}`}
+			>
+				<LinkedInIcon class="w-4 h-4" />
+			</a>
+			<a
+				href="https://www.instagram.com/studio.freunde"
+				class="flex items-center justify-center w-8 h-8 rounded-lg border-2 transition-all hover:bg-opacity-10 hover:bg-blue-50"
+				style={`border-color: ${BRAND_COLOR}; color: ${BRAND_COLOR}`}
+			>
+				<InstagramIcon class="w-6 h-6" />
+			</a>
+		</div>
+
+		<p class="text-[10px] tracking-wide italic mt-1" style={`color: ${BRAND_COLOR}`}>
+			© {currentYear} {copyrightText}
+		</p>
+		<p class="text-[10px] tracking-wide italic mt-1" style={`color: ${BRAND_COLOR}`}>
+			{photoCreditText} © {currentYear} <a
+				href="https://www.instagram.com/agidomany?igsh=NXlvaWVma3VuYmYw"
+				target="_blank"
+				rel="noopener noreferrer">Ágnes Domány</a
+			>. Alle Rechte vorbehalten.
+		</p>
+		<a
+			href={impressumUrl}
+			class="text-[10px] tracking-wide italic mt-1 hover:underline transition-all"
+			style={`color: ${BRAND_COLOR}`}
+		>
+			{impressumLabel}
+		</a>
+	</div>
+</footer>
