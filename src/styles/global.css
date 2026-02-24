@@ -2,10 +2,10 @@
 
 /* Smooth scrolling */
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* Brand color utility */
 .brand-color {
-	color: #00008b;
+  color: #00008b;
 }
