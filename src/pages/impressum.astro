@@ -1,7 +1,7 @@
 ---
-import Footer from '../../components/Footer.astro';
-import Header from '../../components/Header.astro';
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const BRAND_COLOR = '#00008b';
 ---
@@ -12,6 +12,7 @@ const BRAND_COLOR = '#00008b';
                 tagline="Minimale Eingriffe. Langlebige Räume."
                 workLabel="Work"
                 contactLabel="Contact"
+                currentLang="de"
         />
 
         <main class="pt-32 md:pt-36 pb-12 md:pb-20">
@@ -110,7 +111,7 @@ const BRAND_COLOR = '#00008b';
 
         <Footer
                 impressumLabel="Impressum"
-                impressumUrl="/de/impressum"
+                impressumUrl="/impressum"
                 copyrightText="studiofreunde. Alle Rechte vorbehalten."
                 photoCreditText="Fotos"
         />

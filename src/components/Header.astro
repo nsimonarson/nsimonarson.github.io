@@ -11,7 +11,7 @@ interface Props {
 
 const { tagline, workLabel, contactLabel, currentLang } = Astro.props;
 const otherLang = currentLang === 'de' ? 'en' : 'de';
-const otherLangUrl = currentLang === 'de' ? '/en' : '/de';
+const otherLangUrl = currentLang === 'de' ? '/en' : '/';
 const BRAND_COLOR = '#00008b';
 ---
 
