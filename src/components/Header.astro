@@ -6,9 +6,12 @@ interface Props {
 	tagline: string;
 	workLabel: string;
 	contactLabel: string;
+	currentLang: 'de' | 'en';
 }
 
-const { tagline, workLabel, contactLabel } = Astro.props;
+const { tagline, workLabel, contactLabel, currentLang } = Astro.props;
+const otherLang = currentLang === 'de' ? 'en' : 'de';
+const otherLangUrl = currentLang === 'de' ? '/en' : '/de';
 const BRAND_COLOR = '#00008b';
 ---
 
@@ -46,8 +49,16 @@ const BRAND_COLOR = '#00008b';
 				</p>
 			</div>
 
-			<!-- Social Icons (Right) - Hidden on mobile -->
-			<div class="hidden md:flex flex-1 justify-end gap-4">
+			<!-- Language Switcher & Social Icons (Right) - Hidden on mobile -->
+			<div class="hidden md:flex flex-1 justify-end gap-4 items-center">
+				<a
+					href={otherLangUrl}
+					class="text-xs uppercase tracking-wider transition-opacity hover:opacity-70 font-medium"
+					style={`color: ${BRAND_COLOR}`}
+					title={otherLang === 'de' ? 'Deutsch' : 'English'}
+				>
+					{otherLang}
+				</a>
 				<a
 					href="https://www.linkedin.com/in/natalia-simonarson/"
 					class="flex items-center justify-center w-6 h-6 rounded-sm border-2 transition-all hover:bg-opacity-10 hover:bg-blue-50"
