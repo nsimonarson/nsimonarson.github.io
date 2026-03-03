@@ -5,11 +5,12 @@ import LinkedInIcon from './LinkedInIcon.astro';
 interface Props {
 	tagline: string;
 	workLabel: string;
+	teamLabel: string;
 	contactLabel: string;
 	currentLang: 'de' | 'en';
 }
 
-const { tagline, workLabel, contactLabel, currentLang } = Astro.props;
+const { tagline, workLabel, teamLabel, contactLabel, currentLang } = Astro.props;
 const otherLang = currentLang === 'de' ? 'en' : 'de';
 const otherLangUrl = currentLang === 'de' ? '/en' : '/';
 const BRAND_COLOR = '#00008b';
@@ -26,6 +27,13 @@ const BRAND_COLOR = '#00008b';
 					style={`color: ${BRAND_COLOR}`}
 				>
 					{workLabel}
+				</a>
+				<a
+					href={currentLang === 'de' ? '/team' : '/en/team'}
+					class="text-sm lowercase tracking-[0.2em] transition-opacity hover:opacity-70"
+					style={`color: ${BRAND_COLOR}`}
+				>
+					{teamLabel}
 				</a>
 				<a
 					href="mailto:info@studiofreunde.de"

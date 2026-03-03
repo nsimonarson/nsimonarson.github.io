@@ -1,0 +1,254 @@
+---
+import { Image } from 'astro:assets';
+import teamImg from '../assets/Team.jpg';
+import doraImg from '../assets/Dora.jpg';
+import nataliaImg from '../assets/Natalia.jpg';
+import meretImg from '../assets/Meret.jpg';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const BRAND_COLOR = '#00008b';
+---
+
+<BaseLayout title="Team - studiofreunde" lang="de">
+	<div class="min-h-screen bg-white px-6 md:px-12 lg:px-32 xl:px-60">
+		<Header
+			tagline="Minimale Eingriffe. Langlebige Räume."
+			workLabel="Work"
+			teamLabel="Team"
+			contactLabel="Contact"
+			currentLang="de"
+		/>
+
+		<!-- HERO SECTION -->
+		<section class="pt-32 md:pt-36 pb-12 md:pb-20">
+			<div class="w-full">
+				<div class="max-w-4xl mx-auto">
+					<div class="aspect-[3/2] overflow-hidden bg-gray-100">
+						<Image
+							src={teamImg}
+							alt="studiofreunde Team"
+							width={1200}
+							height={800}
+							loading="eager"
+							class="w-full h-full object-cover"
+						/>
+					</div>
+					<div class="flex flex-col md:flex-row justify-between mt-3 px-1 gap-2 md:gap-0">
+						<span class="text-lg tracking-widest text-sm" style={`color: ${BRAND_COLOR}`}>
+							Meret, Natalia, Dora
+						</span>
+						<span class="text-sm tracking-widest text-gray-400">
+							(von links nach rechts)
+						</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- WER SIND WIR SECTION -->
+		<section class="w-full max-w-4xl mx-auto mb-12 md:mb-20">
+			<h2 class="text-2xl font-medium tracking-tight mb-6" style={`color: ${BRAND_COLOR}`}>
+				WER SIND WIR?
+			</h2>
+			<div class="space-y-4 text-sm leading-loose tracking-wide text-justify" style={`color: ${BRAND_COLOR}`}>
+				<p>
+					studiofreunde ist ein Zusammenschluss von Architektinnen, Planerinnen und Beraterinnen mit gebündelter Erfahrung in Entwurf, Planung und Bauleitung aus etablierten Architekturbüros in München, Berlin und Amsterdam.
+				</p>
+				<p>
+					Wir betreuen Projekte unterschiedlicher Größenordnungen – vom Wohnungsbau bis zu individuellen Sonderbauten und von der Zielfindungsphase bis zur Fertigstellung.
+				</p>
+				<p>
+					Unsere Kompetenzen ergänzen sich. Als Kollektiv arbeiten wir flexibel und effizient – je nach Aufgabe im passenden Team.
+				</p>
+			</div>
+		</section>
+
+		<!-- ZUSAMMENARBEIT AUF AUGENHÖHE SECTION -->
+		<section class="w-full max-w-4xl mx-auto mb-16 md:mb-24">
+			<h2 class="text-2xl font-medium tracking-tight mb-6" style={`color: ${BRAND_COLOR}`}>
+				ZUSAMMENARBEIT AUF AUGENHÖHE
+			</h2>
+			<div class="space-y-4 text-sm leading-loose tracking-wide text-justify" style={`color: ${BRAND_COLOR}`}>
+				<p>
+					Projekte entwickeln wir aus den konkreten Anforderungen von Ort, Budget und Nutzung. Klare Konzepte, präzise Planung und eine sorgfältige Umsetzung bilden die Grundlage unserer Arbeit.
+				</p>
+				<p>
+					Wir arbeiten strukturiert, transparent und lösungsorientiert. Klare Prozesse und Kommunikation schaffen Sicherheit in allen Projektphasen.
+				</p>
+				<p>
+					Unser Fokus liegt auf funktionaler, ansprechender und wirtschaftlich durchdachter Architektur. Wo möglich, arbeiten wir mit dem Bestand und nutzen vorhandene Ressourcen. Wir setzen so wenig Eingriffe wie nötig und so viel wie sinnvoll – mit dem Ziel, langlebige und zukunftsfähige Räume zu schaffen.
+				</p>
+			</div>
+		</section>
+
+		<!-- TEAM MEMBERS SECTION -->
+		<section class="w-full max-w-6xl mx-auto mb-12 md:mb-20">
+			<!-- DÓRA NAGY -->
+			<div class="mb-16 md:mb-24">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div class="md:col-span-2">
+						<h3 class="text-xl font-medium tracking-tight mb-2" style={`color: ${BRAND_COLOR}`}>
+							DÓRA NAGY <span class="text-gray-400">ARCHITEKTIN</span>
+						</h3>
+						<div class="text-sm leading-relaxed tracking-wide space-y-3" style={`color: ${BRAND_COLOR}`}>
+							<p class="font-medium">Mitglied der Bayerischen Architektenkammer</p>
+
+							<div>
+								<p class="font-medium">Seit 2025</p>
+								<p>Freiberuflich tätig</p>
+								<p>Mitglied des Kollektivs studiofreunde, München</p>
+							</div>
+
+							<div>
+								<p class="font-medium">2024–2025</p>
+								<p>Meer Architekten, München</p>
+							</div>
+
+							<div>
+								<p class="font-medium">2019–2024</p>
+								<p>ZAP Ziersch Architekten und Planer, Gräfelfing</p>
+							</div>
+
+							<div>
+								<p class="font-medium">2017–2018</p>
+								<p>Selbständige Tätigkeit, München</p>
+								<p class="text-xs mt-1">Entwurfs- und Eingabeplanung sowie Ausschreibung und Vergabe eines Atelierhauses für die deutsch-ungarische Schriftstellerin Terezia Mora in Zusammenarbeit mit dem ungarischen Architekten Istvan Szava</p>
+							</div>
+
+							<div>
+								<p class="font-medium">2015–2017</p>
+								<p>Master Architektur und Kunst</p>
+								<p class="text-xs">Abschlussarbeit bei Prof. Carlo Baumschlager</p>
+								<p class="text-xs">Akademie der Bildenden Künste München</p>
+							</div>
+
+							<div>
+								<p class="font-medium">2012–2015</p>
+								<p>Mitarbeit bei Prof. Heike Hanada und Prof. Jan Kleihues, Berlin</p>
+							</div>
+
+							<div>
+								<p class="font-medium">2010–2015</p>
+								<p>Bachelor Architektur und Städtebau</p>
+								<p class="text-xs">Abschlussarbeit bei Prof. Karl-Heinz Winkes</p>
+								<p class="text-xs">Fachhochschule Potsdam</p>
+							</div>
+						</div>
+					</div>
+					<div class="flex items-start justify-center md:justify-end">
+						<div class="w-full max-w-sm">
+							<Image
+								src={doraImg}
+								alt="Dóra Nagy"
+								width={400}
+								height={600}
+								class="w-full h-auto object-cover"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- NATALIA SIMONARSON -->
+			<div class="mb-16 md:mb-24">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div class="md:col-span-2">
+						<h3 class="text-xl font-medium tracking-tight mb-2" style={`color: ${BRAND_COLOR}`}>
+							NATALIA SIMONARSON <span class="text-gray-400">PLANERIN</span>
+						</h3>
+						<div class="text-sm leading-relaxed tracking-wide space-y-3" style={`color: ${BRAND_COLOR}`}>
+							<p class="font-medium">M.Sc. Architektur</p>
+							<p>Planerin, BIM-Expertin</p>
+
+							<div>
+								<p class="font-medium">Seit 2026</p>
+								<p>Freiberuflich tätig</p>
+								<p>Mitglied des Kollektivs studiofreunde, München</p>
+							</div>
+
+							<div>
+								<p class="font-medium">2025–2026</p>
+								<p>Meer Architekten, München</p>
+							</div>
+
+							<div>
+								<p class="font-medium">2021–2022</p>
+								<p>J.MAYER.H Architekten, Berlin</p>
+							</div>
+
+							<div>
+								<p class="font-medium">2021</p>
+								<p>Sascha Wurm Architektur, München</p>
+							</div>
+
+							<div>
+								<p class="font-medium">2020</p>
+								<p>SeARCH architects, Amsterdam</p>
+							</div>
+
+							<div>
+								<p class="font-medium">2022–2024</p>
+								<p>Master of Science Architecture, Urbanism and Building Sciences</p>
+								<p class="text-xs">Abschlussarbeit bei Prof. Daniel Rosbottom</p>
+								<p class="text-xs">Delft University of Technology</p>
+							</div>
+
+							<div>
+								<p class="font-medium">2017–2021</p>
+								<p>Bachelor of Arts Architektur</p>
+								<p class="text-xs">Abschlussarbeit bei Prof. Stephen Bates und Prof. Bruno Krucker</p>
+								<p class="text-xs">Technische Universität München</p>
+							</div>
+						</div>
+					</div>
+					<div class="flex items-start justify-center md:justify-end">
+						<div class="w-full max-w-sm">
+							<Image
+								src={nataliaImg}
+								alt="Natalia Simonarson"
+								width={400}
+								height={600}
+								class="w-full h-auto object-cover"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- MERET HOFFMANN -->
+			<div class="mb-12 md:mb-20">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div class="md:col-span-2">
+						<h3 class="text-xl font-medium tracking-tight mb-2" style={`color: ${BRAND_COLOR}`}>
+							MERET HOFFMANN <span class="text-gray-400">BERATERIN</span>
+						</h3>
+						<div class="text-sm leading-relaxed tracking-wide space-y-3" style={`color: ${BRAND_COLOR}`}>
+							<p class="font-medium">M.A. Architektur</p>
+							<p>Beraterin zu Leistungen der Objektüberwachung</p>
+						</div>
+					</div>
+					<div class="flex items-start justify-center md:justify-end">
+						<div class="w-full max-w-sm">
+							<Image
+								src={meretImg}
+								alt="Meret Hoffmann"
+								width={400}
+								height={600}
+								class="w-full h-auto object-cover"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Footer
+			impressumLabel="Impressum"
+			impressumUrl="/impressum"
+			copyrightText="studiofreunde. Alle Rechte vorbehalten."
+			photoCreditText="Fotos"
+		/>
+	</div>
+</BaseLayout>
