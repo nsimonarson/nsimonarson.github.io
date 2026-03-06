@@ -7,6 +7,7 @@ import meretImg from '../../assets/Meret.jpg';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import TimelineEntry from "../../components/team/TimelineEntry.astro";
 
 const BRAND_COLOR = '#00008b';
 ---
@@ -95,46 +96,46 @@ const BRAND_COLOR = '#00008b';
 						<div class="text-sm leading-relaxed tracking-wide space-y-3" style={`color: ${BRAND_COLOR}`}>
 							<p class="font-medium">Member of the Bavarian Chamber of Architects</p>
 
-							<div>
-								<p class="font-medium">Since 2025</p>
-								<p>Freelance</p>
-								<p>Member of the collective studiofreunde, Munich</p>
-							</div>
+                            <TimelineEntry
+                                    timespan="Since 2025"
+                                    title="Freelance"
+                                    location="Member of the collective studiofreunde, Munich"
+                            />
 
-							<div>
-								<p class="font-medium">2024–2025</p>
-								<p>Meer Architekten, Munich</p>
-							</div>
+                            <TimelineEntry
+                                    timespan="2024–2025"
+                                    title="Meer Architekten, Munich"
+                            />
 
-							<div>
-								<p class="font-medium">2019–2024</p>
-								<p>ZAP Ziersch Architekten und Planer, Gräfelfing</p>
-							</div>
+                            <TimelineEntry
+                                    timespan="2019–2024"
+                                    title="ZAP Ziersch Architekten und Planer, Gräfelfing"
+                            />
 
-							<div>
-								<p class="font-medium">2017–2018</p>
-								<p>Independent practice, Munich</p>
-								<p class="text-xs mt-1">Design and submission planning as well as tendering and contracting for a studio house for the German-Hungarian writer Terezia Mora in collaboration with Hungarian architect Istvan Szava</p>
-							</div>
+                            <TimelineEntry
+                                    timespan="2017–2018"
+                                    title="Independent practice, Munich"
+                                    description="Design and submission planning as well as tendering and contracting for a studio house for the German-Hungarian writer Terezia Mora in collaboration with Hungarian architect Istvan Szava"
+                            />
 
-							<div>
-								<p class="font-medium">2015–2017</p>
-								<p>Master Architecture and Art</p>
-								<p class="text-xs">Thesis supervised by Prof. Carlo Baumschlager</p>
-								<p class="text-xs">Academy of Fine Arts Munich</p>
-							</div>
+                            <TimelineEntry
+                                    timespan="2015–2017"
+                                    title="Master Architecture and Art"
+                                    description="Thesis supervised by Prof. Carlo Baumschlager"
+                                    location="Academy of Fine Arts Munich"
+                            />
 
-							<div>
-								<p class="font-medium">2012–2015</p>
-								<p>Assistant to Prof. Heike Hanada and Prof. Jan Kleihues, Berlin</p>
-							</div>
+                            <TimelineEntry
+                                    timespan="2012–2015"
+                                    title="Assistant to Prof. Heike Hanada and Prof. Jan Kleihues, Berlin"
+                            />
 
-							<div>
-								<p class="font-medium">2010–2015</p>
-								<p>Bachelor Architecture and Urban Planning</p>
-								<p class="text-xs">Thesis supervised by Prof. Karl-Heinz Winkes</p>
-								<p class="text-xs">University of Applied Sciences Potsdam</p>
-							</div>
+                            <TimelineEntry
+                                    timespan="2010–2015"
+                                    title="Bachelor Architecture and Urban Planning"
+                                    description="Thesis supervised by Prof. Karl-Heinz Winkes"
+                                    location="University of Applied Sciences Potsdam"
+                            />
 						</div>
 					</div>
 					<div class="flex items-start justify-center md:justify-end">
@@ -159,58 +160,47 @@ const BRAND_COLOR = '#00008b';
 							NATALIA SIMONARSON <span class="text-gray-400">PLANNER</span>
 						</h3>
 						<div class="text-sm leading-relaxed tracking-wide space-y-3" style={`color: ${BRAND_COLOR}`}>
-							<p class="font-medium">M.Sc. Architecture</p>
-							<p>Planner, BIM Expert</p>
+                            <p class="font-medium">M.Sc. Architecture</p>
+                            <p>Planner, BIM Expert</p>
 
-							<div>
-								<p class="font-medium">Since 2026</p>
-								<p>Freelance</p>
-								<p>Member of the collective studiofreunde, Munich</p>
-							</div>
+                            <TimelineEntry
+                                    timespan="Since 2026"
+                                    title="Freelance"
+                                    location="Member of the collective studiofreunde, Munich"
+                            />
 
-							<div>
-								<p class="font-medium">2025–2026</p>
-								<p>Meer Architekten, Munich</p>
-							</div>
+                            <TimelineEntry
+                                    timespan="2025–2026"
+                                    title="Meer Architekten, Munich"
+                            />
 
-							<div>
-								<p class="font-medium">2021–2022</p>
-								<p>J.MAYER.H Architekten, Berlin</p>
-							</div>
+                            <TimelineEntry
+                                    timespan="2021–2022"
+                                    title="J.MAYER.H Architekten, Berlin"
+                            />
 
-							<div>
-								<p class="font-medium">2021</p>
-								<p>Sascha Wurm Architektur, Munich</p>
-							</div>
+                            <TimelineEntry
+                                    timespan="2021"
+                                    title="Sascha Wurm Architektur, Munich"
+                            />
 
-							<div>
-								<p class="font-medium">2020</p>
-								<p>SeARCH architects, Amsterdam</p>
-							</div>
+                            <TimelineEntry
+                                    timespan="2020"
+                                    title="SeARCH architects, Amsterdam"
+                            />
 
-							<div>
-								<p class="font-medium">2022–2024</p>
-								<p>Master of Science Architecture, Urbanism and Building Sciences</p>
-								<p class="text-xs">Thesis supervised by Prof. Daniel Rosbottom</p>
-								<p class="text-xs">Delft University of Technology</p>
-							</div>
+                            <TimelineEntry
+                                    timespan="2022–2024"
+                                    title="Master of Science Architecture, Urbanism and Building Sciences"
+                                    description="Thesis supervised by Prof. Daniel Rosbottom"
+                                    location="Delft University of Technology"
+                            />
 
-							<div>
-								<p class="font-medium">2017–2021</p>
-								<p>Bachelor of Arts Architecture</p>
-								<p class="text-xs">Thesis supervised by Prof. Stephen Bates and Prof. Bruno Krucker</p>
-								<p class="text-xs">Technical University of Munich</p>
-							</div>
-
-                            <div>
-                                <p class="font-medium">2018–2024</p>
-                                <p>Scholar of the Heinrich Böll Foundation</p>
-                            </div>
-
-                            <div>
-                                <p class="font-medium">2020–2021</p>
-                                <p>Scholar of the Baumeister Academy</p>
-                            </div>
+                            <TimelineEntry timespan="2017–2021" title="Bachelor of Arts Architecture"
+                                           description="Thesis supervised by Prof. Stephen Bates and Prof. Bruno Krucker"
+                                           location="Technical University of Munich" />
+                            <TimelineEntry timespan="2018-2024" title="Scholar of the Heinrich Böll Foundation" />
+                            <TimelineEntry timespan="2020–2021"title="Scholar of the Baumeister Academy" />
 						</div>
 					</div>
 					<div class="flex items-start justify-center md:justify-end">

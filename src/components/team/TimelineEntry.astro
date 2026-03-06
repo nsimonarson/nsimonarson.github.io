@@ -1,0 +1,22 @@
+---
+interface Props {
+    timespan: string
+    title: string
+    description?: string
+    location?: string
+}
+
+const {
+    timespan,
+    title,
+    description,
+    location,
+} = Astro.props;
+---
+
+<div>
+    <p class="font-medium">{timespan}</p>
+    <p>{title}</p>
+    {description && <p class="text-xs">{description}</p>}
+    {location && <p class="text-xs">{location}</p>}
+</div>

@@ -10,10 +10,13 @@ interface Props {
 	currentLang: 'de' | 'en';
 }
 
+const currentPath = Astro.url.pathname;
+
 const { tagline, workLabel, teamLabel, contactLabel, currentLang } = Astro.props;
 const otherLang = currentLang === 'de' ? 'en' : 'de';
-const otherLangUrl = currentLang === 'de' ? '/en' : '/';
+const otherLangUrl = currentLang === 'de' ? `/en${currentPath}` : `${currentPath.replace('/en', '')}`;
 const BRAND_COLOR = '#00008b';
+
 ---
 
 <header class="fixed left-0 right-0 bg-white z-50">
@@ -50,7 +53,9 @@ const BRAND_COLOR = '#00008b';
 					class="text-3xl font-bold mb-1"
 					style={`color: ${BRAND_COLOR}; letter-spacing: 1.5pt; font-family: agenda, sans-serif;`}
 				>
+                    <a href={currentLang == 'de' ? '/' : '/en'} style={`color: ${BRAND_COLOR}; letter-spacing: 1.5pt; font-family: agenda, sans-serif;`}>
 					studiofreunde
+                    </a>
 				</h1>
 				<p class="text-xs tracking-wide block" style={`color: ${BRAND_COLOR}`}>
 					{tagline}

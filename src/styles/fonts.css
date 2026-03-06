@@ -2,6 +2,6 @@
 
 /* Optimize font loading to prevent FOUC */
 @font-face {
-  font-family: 'agenda';
+  font-family: "agenda";
   font-display: swap; /* Show fallback font immediately, swap when custom font loads */
 }
