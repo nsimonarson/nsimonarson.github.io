@@ -35,7 +35,7 @@ const BRAND_COLOR = '#00008b';
 			<!-- Navigation (Left) - Hidden on mobile -->
 			<nav class="hidden md:flex flex-1 justify-start gap-12">
 				<a
-					href="#work"
+					href={currentLang === 'de' ? "/#work" : "/en#work"}
 					class="text-sm lowercase tracking-[0.2em] transition-opacity hover:opacity-70"
 					style={`color: ${BRAND_COLOR}`}
 				>
